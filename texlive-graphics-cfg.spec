@@ -16,7 +16,8 @@ Requires(post):	texlive-kpathsea
 %description
 Default configuration files for the texlive graphicx module
 
-%post -p %{_sbindir}/texlive.post
+%post
+%{_sbindir}/texlive.post
 
 %postun
 if [ $1 -eq 0 ]; then
