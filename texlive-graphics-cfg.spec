@@ -1,5 +1,5 @@
 Name:		texlive-graphics-cfg
-Version:	20160604
+Version:	20170414
 Release:	1
 Summary:	Standard LaTeX graphics
 Group:		Publishing
