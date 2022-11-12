@@ -1,12 +1,12 @@
 Name:		texlive-graphics-cfg
-Version:	20190228
+Version:	41448
 Release:	1
 Summary:	Standard LaTeX graphics
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/graphics-cfg
 License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/graphics-cfg.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/graphics-cfg.doc.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/graphics-cfg.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/graphics-cfg.doc.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires:	texlive-graphics
@@ -31,7 +31,7 @@ fi
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1
+%autosetup -p1 -c -a1
 
 %build
 
