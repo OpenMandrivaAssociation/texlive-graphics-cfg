@@ -3,7 +3,7 @@ Version:	41448
 Release:	2
 Summary:	Standard LaTeX graphics
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/graphics-cfg
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/graphics-cfg
 License:	LPPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/graphics-cfg.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/graphics-cfg.doc.r%{version}.tar.xz
