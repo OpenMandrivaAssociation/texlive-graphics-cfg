@@ -1,40 +1,24 @@
-Name:		texlive-graphics-cfg
-Version:	41448
-Release:	2
-Summary:	Standard LaTeX graphics
+%global tl_name graphics-cfg
+%global tl_revision 41448
+
+Name:		texlive-%{tl_name}
+Version:	%{tl_revision}
+Release:	1
+Summary:	Sample configuration files for LaTeX color and graphics
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/graphics-cfg
-License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/graphics-cfg.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/graphics-cfg.doc.r%{version}.tar.xz
+License:	pd
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/graphics-cfg.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/graphics-cfg.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires:	texlive-graphics
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-Default configuration files for the texlive graphicx module
+This bundle includes color.cfg and graphics.cfg files that set default
+"driver" options for the color and graphics packages. It contains
+support for defaulting the new LuaTeX option which was added to graphics
+and color in the 2016-02-01 release. The LuaTeX option is only used for
+LuaTeX versions from 0.87, older versions use the pdfTeX option as
+before.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/tex/latex/graphics-cfg
-%doc %{_texmfdistdir}/doc/latex/graphics-cfg
-
-#-----------------------------------------------------------------------
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar tex doc %{buildroot}%{_texmfdistdir}
